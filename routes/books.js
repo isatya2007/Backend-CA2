@@ -4,7 +4,7 @@ const Book = require("../models/Book");
 
 const router = express.Router();
 
-// Add a book
+
 router.post("/", async (req, res) => {
   try {
     const { title, author, category } = req.body || {};
@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// List books with pagination
+
 router.get("/", async (req, res) => {
   const page = Number.parseInt(req.query.page, 10) || 1;
   const limit = Number.parseInt(req.query.limit, 10) || 10;
@@ -50,7 +50,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Update a book's availability
+
 router.patch("/:id", async (req, res) => {
   const { id } = req.params;
   const { available } = req.body || {};
